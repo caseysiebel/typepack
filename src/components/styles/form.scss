@@ -1,0 +1,8 @@
+.form {
+    display: grid;
+    grid-template-columns: 80% 1fr;  
+    grid-row-start: 2;
+    input {
+        font-size: 20px;
+    }
+}

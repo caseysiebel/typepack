@@ -1,6 +1,9 @@
 .app {
     margin: 0 20%;
-    display: block;
+    display: grid;
+    grid-template-rows: 93% 1fr;
+    height: 95vh;
+    box-sizing: border-box;
     text-align: center;
-    background: green;
+    border: black 1px solid;
 }
