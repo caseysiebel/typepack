@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ETP = require('extract-text-webpack-plugin');
 
 const config = {
     //entry: './src/index.tsx',
@@ -16,9 +17,17 @@ const config = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loaders: 'awesome-typescript-loader',
+                loader: 'awesome-typescript-loader',
                 exclude: /node_modules/
-            }
+            },
+            {
+                test: /\.(css|scss|sass)$/,
+                loader: ETP.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader!postcss-loader!sass-loader'
+                }),
+                include: path.join(__dirname, 'src')
+            },
         ]
     },
     devServer: {
@@ -37,7 +46,7 @@ const config = {
             filename: 'index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
-        // new ETP('styles.css'),
+        new ETP('styles.css'),
     ]
 };
 
