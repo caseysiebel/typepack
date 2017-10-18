@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
     //entry: './src/index.tsx',
-    context: path.join(__dirname, 'src'),
+    //context: path.join(__dirname, 'src'),
     entry: path.join(__dirname, 'src/index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
