@@ -22,14 +22,14 @@ const config = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
     },
-	plugins: [
-		new HtmlWebpackPlugin({
+    plugins: [
+        new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src/html', 'index.html'),
-			inject: 'body',
-			filename: 'index.html'
-		}),
-		new webpack.HotModuleReplacementPlugin(),
-		// new ETP('styles.css'),
+            inject: 'body',
+            filename: 'index.html'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        // new ETP('styles.css'),
     ]
 };
 
