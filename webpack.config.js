@@ -4,7 +4,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-    entry: './src/index.tsx',
+    //entry: './src/index.tsx',
+    context: path.join(__dirname, 'src'),
+    entry: path.join(__dirname, 'src/index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
@@ -18,6 +20,12 @@ const config = {
                 exclude: /node_modules/
             }
         ]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist/'),
+        inline: true,
+        hot: true,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
